@@ -154,7 +154,9 @@ class OrderService:
                     discount_amount=discount_amount
                 )
                 DiscountService.increment_usage_count(benefit_value['discount_id'])
+                discount_ids.add(benefit_value['discount_id'])
 
+        order.discounts = discount_ids
 
         subscription.total_spent += total_amount
         subscription.total_saved += order.total_savings
