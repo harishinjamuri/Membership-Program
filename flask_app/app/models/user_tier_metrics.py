@@ -1,11 +1,12 @@
-from datetime import datetime 
+from datetime import datetime
 from app.models.base import BaseModel, db
 
-class UserTierMetrics(BaseModel):
-    __tablename__ = 'user_tier_metrics'
 
-    user_id  = db.Column(db.String(36), nullable=False)
-    month_year  = db.Column(db.String(7), nullable=False)  # Format: YYYY-MM
+class UserTierMetrics(BaseModel):
+    __tablename__ = "user_tier_metrics"
+
+    user_id = db.Column(db.String(36), nullable=False)
+    month_year = db.Column(db.String(7), nullable=False)  # Format: YYYY-MM
     order_count = db.Column(db.Integer, nullable=False)
     total_spent = db.Column(db.Float, nullable=False)
 

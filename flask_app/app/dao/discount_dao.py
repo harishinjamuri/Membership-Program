@@ -2,17 +2,18 @@ from app.models.discount import Discount
 from app.models.base import db
 from app.utils.exceptions import NotFoundException
 
+
 class DiscountDAO:
 
     @staticmethod
     def get_all(page=1, per_page=10, filters=None):
         query = Discount.query
         filters = filters or {}
-        
+
         if filters.get("active"):
             query = query.filter(Discount.is_active == filters["active"])
 
-        if filters.get('discount_type') is not None:
+        if filters.get("discount_type") is not None:
             query = query.filter(Discount.discount_type == filters["discount_type"])
 
         pagination = query.paginate(page=page, per_page=per_page, error_out=False)
@@ -21,7 +22,7 @@ class DiscountDAO:
     @staticmethod
     def get_by_id(discount_id):
         return Discount.query.filter_by(id=discount_id, is_active=True).first()
-    
+
     @staticmethod
     def get_by_code(code):
         return Discount.query.filter_by(code=code, is_active=True).first()

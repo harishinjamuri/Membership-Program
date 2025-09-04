@@ -1,6 +1,7 @@
 from app.models.product import Product
 from app.models import db
 
+
 class ProductDAO:
 
     @staticmethod
@@ -24,7 +25,9 @@ class ProductDAO:
                 query = query.filter(Product.stock_quantity <= 0)
 
         if filters.get("exclusive") is not None:
-            query = query.filter(Product.is_membership_exclusive == filters["exclusive"])
+            query = query.filter(
+                Product.is_membership_exclusive == filters["exclusive"]
+            )
 
         if filters.get("product"):
             name_filter = filters["product"]
@@ -32,7 +35,7 @@ class ProductDAO:
 
         pagination = query.paginate(page=page, per_page=per_page, error_out=False)
         return pagination.items, pagination.total
-    
+
     @staticmethod
     def get_by_id(product_id):
         return Product.query.filter_by(id=product_id).first()
@@ -54,12 +57,11 @@ class ProductDAO:
                 setattr(product, key, value)
         db.session.commit()
         return product
-    
+
     @staticmethod
     def commit(product):
         db.session.add(product)
         db.session.commit()
-
 
     @staticmethod
     def soft_delete(product_id):

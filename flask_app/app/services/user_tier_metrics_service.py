@@ -1,5 +1,6 @@
 from app.dao.user_tier_metrics_dao import UserTierMetricsDAO
 
+
 class UserTierMetricsService:
 
     @staticmethod

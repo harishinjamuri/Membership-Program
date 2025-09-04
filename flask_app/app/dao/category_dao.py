@@ -1,6 +1,7 @@
 from app.models.category import Category
 from app.models import db
 
+
 class CategoryDAO:
 
     @staticmethod
@@ -10,7 +11,7 @@ class CategoryDAO:
         if filters.get("is_active"):
             query = query.filter(Category.is_active == filters["is_active"])
 
-        pagination  = query.paginate(page=page, per_page=per_page, error_out=False)
+        pagination = query.paginate(page=page, per_page=per_page, error_out=False)
         return pagination.items, pagination.total
 
     @staticmethod

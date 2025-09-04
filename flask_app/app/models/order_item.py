@@ -1,7 +1,8 @@
 from app.models.base import BaseModel, db
 
+
 class OrderItem(BaseModel):
-    __tablename__ = 'order_item'
+    __tablename__ = "order_item"
 
     order_id = db.Column(db.String(36), nullable=False)
     product_id = db.Column(db.String(36), nullable=False)

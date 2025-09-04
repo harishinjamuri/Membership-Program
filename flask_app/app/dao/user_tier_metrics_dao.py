@@ -2,11 +2,14 @@ from datetime import datetime
 from app.models.user_tier_metrics import UserTierMetrics
 from app.models import db
 
+
 class UserTierMetricsDAO:
 
     @staticmethod
     def get_for_user_month(user_id, month_year):
-        return UserTierMetrics.query.filter_by(user_id=user_id, month_year=month_year).first()
+        return UserTierMetrics.query.filter_by(
+            user_id=user_id, month_year=month_year
+        ).first()
 
     @staticmethod
     def create_or_update(data):
@@ -36,8 +39,7 @@ class UserTierMetricsDAO:
     @staticmethod
     def get_top_spenders(month_year, top_n=10):
         return (
-            UserTierMetrics.query
-            .filter_by(month_year=month_year)
+            UserTierMetrics.query.filter_by(month_year=month_year)
             .order_by(UserTierMetrics.total_spent.desc())
             .limit(top_n)
             .all()

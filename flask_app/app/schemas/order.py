@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from enum import Enum
 
+
 class OrderItemModel(BaseModel):
     product_id: str
     quantity: int

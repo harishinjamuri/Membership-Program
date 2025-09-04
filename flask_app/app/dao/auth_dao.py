@@ -24,7 +24,7 @@ class AuthDAO:
             phone_number=phone_number,
             date_of_birth=date_of_birth,
             created_at=datetime.utcnow(),
-            updated_at=datetime.utcnow()
+            updated_at=datetime.utcnow(),
         )
         db.session.add(user)
         db.session.commit()

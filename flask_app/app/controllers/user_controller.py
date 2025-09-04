@@ -4,27 +4,28 @@ from app.services.user_service import UserService
 from app.utils.response import success_response, error_response
 from app.utils.decorators import admin_required
 
+
 class UserController:
     @staticmethod
     @admin_required()
     def get_all():
-        page = request.args.get('page', default=1, type=int)
-        per_page = request.args.get('per_page', default=10, type=int)
+        page = request.args.get("page", default=1, type=int)
+        per_page = request.args.get("per_page", default=10, type=int)
 
-        filters = {
-            "status":request.args.get('status')
-        }
+        filters = {"status": request.args.get("status")}
 
         filters = {k: v for k, v in filters.items() if v is not None}
 
         users, total = UserService.get_all(page, per_page, filters)
-        return success_response("Users retrieved", {
-            "items": [u.to_dict() for u in users],
-            "total": total,
-            "page": page,
-            "per_page": per_page,
-        })
-
+        return success_response(
+            "Users retrieved",
+            {
+                "items": [u.to_dict() for u in users],
+                "total": total,
+                "page": page,
+                "per_page": per_page,
+            },
+        )
 
     @staticmethod
     @jwt_required()

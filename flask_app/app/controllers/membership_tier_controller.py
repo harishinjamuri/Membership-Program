@@ -8,24 +8,29 @@ class MembershipTierController:
 
     @staticmethod
     def get_all():
-        page = request.args.get('page', default=1, type=int)
-        per_page = request.args.get('per_page', default=10, type=int)
+        page = request.args.get("page", default=1, type=int)
+        per_page = request.args.get("per_page", default=10, type=int)
 
         filters = {
-            "is_active": request.args.get("active", type=lambda v: v.lower() == 'true' if v else None),
-            "tier_level": request.args.get('tier_level')
+            "is_active": request.args.get(
+                "active", type=lambda v: v.lower() == "true" if v else None
+            ),
+            "tier_level": request.args.get("tier_level"),
         }
 
         filters = {k: v for k, v in filters.items() if v is not None}
 
-        tiers, total = MembershipTierService.get_all(page, per_page,  filters = filters)
-        return success_response("Membership Tiers retrieved", {
-            "items": [t.to_dict() for t in tiers],
-            "total": total,
-            "page": page,
-            "per_page": per_page,
-        })
-    
+        tiers, total = MembershipTierService.get_all(page, per_page, filters=filters)
+        return success_response(
+            "Membership Tiers retrieved",
+            {
+                "items": [t.to_dict() for t in tiers],
+                "total": total,
+                "page": page,
+                "per_page": per_page,
+            },
+        )
+
     @staticmethod
     def get_one(tier_id):
         tier = MembershipTierService.get_by_id(tier_id)

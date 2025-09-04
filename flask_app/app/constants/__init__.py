@@ -5,6 +5,7 @@ class UserType(Enum):
     ADMIN = "Admin"
     USER = "User"
 
+
 class UserStatus(Enum):
     ACTIVE = "Active"
     INACTIVE = "InActive"
@@ -15,22 +16,27 @@ class SubscriptionStatus(Enum):
     ACTIVE = "Active"
     EXPIRED = "Expired"
 
+
 class TierType(Enum):
     BRONZE = 1
     SILVER = 2
     GOLD = 3
     PLATINUM = 4
 
+
 class PlanType(Enum):
     """Enumeration of subscription plan types."""
+
     MONTHLY = 30
     QUARTERLY = 90
     YEARLY = 365
+
 
 class DiscountType(Enum):
     PERCENTAGE = "Percentage"
     FIXED_AMOUNT = "Fixed_amount"
     FREE_SHIPPING = "Free_shipping"
+
 
 class BenefitType(Enum):
     DISCOUNT = "Discount"
@@ -42,6 +48,7 @@ class BenefitType(Enum):
 
 class OrderStatus(Enum):
     """Enumeration of order statuses."""
+
     PENDING = "Pending"
     CONFIRMED = "Confirmed"
     PROCESSING = "Processing"
@@ -71,6 +78,6 @@ class EntityType(Enum):
 
 class DiscountApplicableType(Enum):
     Product = "product"
-    Category ="category"
+    Category = "category"
     Tier = "tier"
     Plan = "plan"

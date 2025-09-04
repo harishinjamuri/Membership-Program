@@ -19,13 +19,13 @@ class AuthService:
                 dob = datetime.strptime(date_of_birth, "%Y/%m/%d")  # or "%Y-%m-%d"
             except ValueError:
                 raise Exception("Invalid date format. Use YYYY/MM/DD.")
-            
+
         return AuthDAO.create_user(
             name=name,
             email=email,
             password_hash=hashed_password,
             phone_number=phone_number,
-            date_of_birth=dob
+            date_of_birth=dob,
         )
 
     @staticmethod

@@ -3,13 +3,16 @@ from app.services.tier_benefit_service import TierBenefitService
 from app.utils.response import success_response, error_response
 from app.utils.decorators import admin_required
 
+
 class TierBenefitController:
 
     @staticmethod
     def get_all():
-        is_active = request.args.get('active', default=True, type=bool)
+        is_active = request.args.get("active", default=True, type=bool)
         benefits = TierBenefitService.get_all(is_active)
-        return success_response("Tier benefits fetched", [b.to_dict() for b in benefits])
+        return success_response(
+            "Tier benefits fetched", [b.to_dict() for b in benefits]
+        )
 
     @staticmethod
     def get_one(benefit_id):
@@ -23,7 +26,9 @@ class TierBenefitController:
         benefits = TierBenefitService.get_by_tier_id(tier_id)
         if not benefits:
             return error_response("No benefits found for the given tier", 404)
-        return success_response("Benefits by tier fetched", [b.to_dict() for b in benefits])
+        return success_response(
+            "Benefits by tier fetched", [b.to_dict() for b in benefits]
+        )
 
     @staticmethod
     @admin_required()

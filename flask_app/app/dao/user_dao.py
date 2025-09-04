@@ -1,6 +1,8 @@
 from app.models.user import User
 from app.models import db
 from app.constants import UserStatus
+
+
 class UserDAO:
 
     @staticmethod
@@ -8,19 +10,18 @@ class UserDAO:
         query = User.query
 
         filters = filters or {}
-        if filters.get('status'):
-            query.filter_by(User.status == filters['status'] )
+        if filters.get("status"):
+            query.filter_by(User.status == filters["status"])
 
-        if filters.get('user_type'):
-            query.filter_by(User.status == filters['user_type'] )
-        
-        
-        pagination  = query.paginate(page=page, per_page=per_page, error_out=False)
+        if filters.get("user_type"):
+            query.filter_by(User.status == filters["user_type"])
+
+        pagination = query.paginate(page=page, per_page=per_page, error_out=False)
         return pagination.items, pagination.total
 
     @staticmethod
     def get_by_id(user_id):
-        return User.query.filter_by(id=user_id, status= UserStatus.ACTIVE ).first()
+        return User.query.filter_by(id=user_id, status=UserStatus.ACTIVE).first()
 
     @staticmethod
     def update(user_id, data):

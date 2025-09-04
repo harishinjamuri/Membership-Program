@@ -3,6 +3,7 @@ from app.models import db
 from sqlalchemy import and_
 from datetime import datetime
 
+
 class NotificationDAO:
 
     @staticmethod
@@ -14,7 +15,9 @@ class NotificationDAO:
                 query = query.filter(Notifications.is_read == filters["is_read"])
 
             if filters.get("notification_type"):
-                query = query.filter(Notifications.notification_type == filters["notification_type"])
+                query = query.filter(
+                    Notifications.notification_type == filters["notification_type"]
+                )
 
             if filters.get("start_date"):
                 query = query.filter(Notifications.created_at >= filters["start_date"])
@@ -47,5 +50,7 @@ class NotificationDAO:
 
     @staticmethod
     def mark_all_as_read(user_id):
-        Notifications.query.filter_by(user_id=user_id, is_read=False).update({Notifications.is_read: True})
+        Notifications.query.filter_by(user_id=user_id, is_read=False).update(
+            {Notifications.is_read: True}
+        )
         db.session.commit()

@@ -3,13 +3,14 @@ from datetime import datetime
 
 from app.constants import DiscountType
 
-class Discount(BaseModel):
-    __tablename__ = 'discount'
 
-    code  = db.Column(db.String(36), nullable=False)
-    name  = db.Column(db.String(100), nullable=False)
-    description  = db.Column(db.Text, nullable=False)
-    discount_type  = db.Column(db.Enum(DiscountType), nullable=False)
+class Discount(BaseModel):
+    __tablename__ = "discount"
+
+    code = db.Column(db.String(36), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    discount_type = db.Column(db.Enum(DiscountType), nullable=False)
     value = db.Column(db.Float, default=0)
     applies_to = db.Column(db.JSON, nullable=False)
     start_date = db.Column(db.DateTime, nullable=False)
@@ -39,7 +40,7 @@ class Discount(BaseModel):
     @property
     def applies_to_type(self):
         """Get discount applicability target (product/category/all)."""
-        return self.applies_to.get("type","")
+        return self.applies_to.get("type", "")
 
     @property
     def applicable_ids(self):

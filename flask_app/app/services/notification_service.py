@@ -1,9 +1,10 @@
 from app.dao.notification_dao import NotificationDAO
 
+
 class NotificationService:
 
     @staticmethod
-    def get_all_for_user(user_id, page, per_page,filters=None):
+    def get_all_for_user(user_id, page, per_page, filters=None):
         return NotificationDAO.get_all_for_user(user_id, page, per_page, filters)
 
     @staticmethod

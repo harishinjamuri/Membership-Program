@@ -1,5 +1,6 @@
 from app.dao.order_item_dao import OrderItemDAO
 
+
 class OrderItemService:
 
     @staticmethod
@@ -9,7 +10,7 @@ class OrderItemService:
     @staticmethod
     def get_by_id(order_item_id):
         return OrderItemDAO.get_by_id(order_item_id)
-    
+
     @staticmethod
     def get_by_ids(order_item_ids):
         return OrderItemDAO.get_by_ids(order_item_ids)
@@ -32,11 +33,11 @@ class OrderItemService:
     @staticmethod
     def delete(order_item_id):
         from app.services.order_service import OrderService
-        
+
         item = OrderItemDAO.get_by_id(order_item_id)
         if not item:
             return None
-        
+
         success = OrderItemDAO.delete(order_item_id)
         if success:
             OrderService.recalculate_order(item.order_id)

@@ -13,7 +13,7 @@ class TierBenefitService:
     @staticmethod
     def get_by_id(benefit_id):
         return TierBenefitDAO.get_by_id(benefit_id)
-    
+
     @staticmethod
     def get_by_tier_id(tier_id):
         return TierBenefitDAO.get_by_tier_id(tier_id)
@@ -21,11 +21,13 @@ class TierBenefitService:
     @staticmethod
     def create(data):
         try:
-            validated_benefit_value = validate_benefit(data["benefit_type"], data["benefit_value"])
+            validated_benefit_value = validate_benefit(
+                data["benefit_type"], data["benefit_value"]
+            )
             data["benefit_value"] = validated_benefit_value.dict()
         except ValidationError as e:
             current_app.logger.exception("Invalid benefit_value:", e)
-        
+
         return TierBenefitDAO.create(data)
 
     @staticmethod

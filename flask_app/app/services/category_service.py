@@ -1,5 +1,6 @@
 from app.dao.category_dao import CategoryDAO
 
+
 class CategoryService:
 
     @staticmethod

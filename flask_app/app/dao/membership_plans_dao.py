@@ -1,6 +1,7 @@
 from app import db
 from app.models.membership_plans import MemberShipPlans
 
+
 class MembershipPlansDAO:
 
     @staticmethod
@@ -9,8 +10,8 @@ class MembershipPlansDAO:
         filters = filters or {}
         if filters.get("is_active"):
             query = query.filter(MemberShipPlans.is_active == filters["is_active"])
-            
-        pagination  = query.paginate(page=page, per_page=per_page, error_out=False)
+
+        pagination = query.paginate(page=page, per_page=per_page, error_out=False)
         return pagination.items, pagination.total
 
     @staticmethod
@@ -20,11 +21,11 @@ class MembershipPlansDAO:
     @staticmethod
     def create(data):
         plan = MemberShipPlans(
-            name=data['name'],
-            description=data['description'],
-            price=data.get('price', 0.0)
+            name=data["name"],
+            description=data["description"],
+            price=data.get("price", 0.0),
         )
-        plan.plan_type = data['plan_type']
+        plan.plan_type = data["plan_type"]
         db.session.add(plan)
         db.session.commit()
         return plan

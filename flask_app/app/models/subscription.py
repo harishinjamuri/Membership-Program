@@ -4,13 +4,14 @@ from datetime import datetime
 
 from app.constants import SubscriptionStatus, TierType
 
+
 class Subscription(BaseModel):
-    __tablename__ = 'subscription'
+    __tablename__ = "subscription"
 
     user_id = db.Column(db.String(36), nullable=False)
     plan_id = db.Column(db.String(36), nullable=False)
     tier_id = db.Column(db.String(36), nullable=False)
-    current_tier = db.Column(db.Integer, default= TierType.BRONZE.value )
+    current_tier = db.Column(db.Integer, default=TierType.BRONZE.value)
     benefits = db.Column(db.JSON, nullable=False)
     start_date = db.Column(db.DateTime, nullable=False)
     end_date = db.Column(db.DateTime, nullable=False)
@@ -22,7 +23,7 @@ class Subscription(BaseModel):
 
     def __repr__(self):
         return f"<Subscription {self.subscription_number}>"
-    
+
     @property
     def status(self):
         if self.is_expired:

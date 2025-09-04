@@ -8,23 +8,28 @@ class MembershipPlansController:
 
     @staticmethod
     def get_all():
-        page = request.args.get('page', default=1, type=int)
-        per_page = request.args.get('per_page', default=10, type=int)
+        page = request.args.get("page", default=1, type=int)
+        per_page = request.args.get("per_page", default=10, type=int)
 
         filters = {
-            "is_active": request.args.get("active", type=lambda v: v.lower() == 'true' if v else None),
+            "is_active": request.args.get(
+                "active", type=lambda v: v.lower() == "true" if v else None
+            ),
         }
 
         filters = {k: v for k, v in filters.items() if v is not None}
 
         plans, total = MembershipPlansService.get_all(page, per_page, filters)
-        return success_response("Membership plans retrieved", {
-            "items": [p.to_dict() for p in plans],
-            "total": total,
-            "page": page,
-            "per_page": per_page,
-        })
-    
+        return success_response(
+            "Membership plans retrieved",
+            {
+                "items": [p.to_dict() for p in plans],
+                "total": total,
+                "page": page,
+                "per_page": per_page,
+            },
+        )
+
     @staticmethod
     def get_one(plan_id):
         plan = MembershipPlansService.get_by_id(plan_id)

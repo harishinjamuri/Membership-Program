@@ -1,6 +1,7 @@
 from app.models.address_book import AddressBook
 from app.models.base import db
 
+
 class AddressBookDAO:
     @staticmethod
     def create(data):

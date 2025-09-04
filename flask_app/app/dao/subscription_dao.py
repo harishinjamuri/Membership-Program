@@ -1,6 +1,7 @@
 from app.models.subscription import Subscription
 from app.models.base import db
 
+
 class SubscriptionDAO:
 
     @staticmethod
@@ -16,9 +17,8 @@ class SubscriptionDAO:
 
         query = query.order_by(Subscription.start_date.desc())
         pagination = query.paginate(page=page, per_page=per_page, error_out=False)
-        
-        return pagination.items, pagination.total
 
+        return pagination.items, pagination.total
 
     @staticmethod
     def get_by_id(subscription_id):
@@ -33,14 +33,18 @@ class SubscriptionDAO:
 
     @staticmethod
     def get_active_by_user(user_id):
-        return Subscription.query.filter_by(user_id=user_id, is_active=True).order_by(Subscription.end_date.desc()).first()
+        return (
+            Subscription.query.filter_by(user_id=user_id, is_active=True)
+            .order_by(Subscription.end_date.desc())
+            .first()
+        )
 
     @staticmethod
     def save(subscription):
         db.session.add(subscription)
         db.session.commit()
         return subscription
-    
+
     @staticmethod
     def update(subscription_id, data):
         subscription = SubscriptionDAO.get_by_id(subscription_id)

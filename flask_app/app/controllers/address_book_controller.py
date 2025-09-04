@@ -5,7 +5,7 @@ from app.utils.response import success_response
 
 
 class AddressBookController:
-    
+
     @staticmethod
     @jwt_required()
     def create_address():
@@ -27,7 +27,6 @@ class AddressBookController:
         user_id = get_jwt_identity()
         addresses = AddressBookService.get_addresses(user_id)
         return success_response("User addresses", [a.to_dict() for a in addresses])
-
 
     @staticmethod
     @jwt_required()

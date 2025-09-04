@@ -1,6 +1,7 @@
 from app.models.order_item import OrderItem
 from app.models import db
 
+
 class OrderItemDAO:
 
     @staticmethod
@@ -10,7 +11,7 @@ class OrderItemDAO:
     @staticmethod
     def get_by_id(order_item_id):
         return OrderItem.query.filter_by(id=order_item_id).first()
-    
+
     @staticmethod
     def get_by_ids(order_item_ids):
         return OrderItem.query.filter(OrderItem.id.in_(order_item_ids)).all()

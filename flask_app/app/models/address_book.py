@@ -1,9 +1,10 @@
 from app.models.base import BaseModel, db
 
-class AddressBook(BaseModel):
-    __tablename__ = 'address_book'
 
-    name = db.Column(db.Text,nullable=False)
+class AddressBook(BaseModel):
+    __tablename__ = "address_book"
+
+    name = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.String(36), nullable=False)
     pincode = db.Column(db.String(36), nullable=False)
     address = db.Column(db.Text, nullable=False)

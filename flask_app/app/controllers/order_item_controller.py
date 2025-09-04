@@ -3,6 +3,7 @@ from flask_jwt_extended import jwt_required
 from app.services.order_item_service import OrderItemService
 from app.utils.response import success_response, error_response
 
+
 class OrderItemController:
 
     @staticmethod
@@ -44,5 +45,3 @@ class OrderItemController:
             return error_response(message, 404)
 
         return success_response(message)
-    
-

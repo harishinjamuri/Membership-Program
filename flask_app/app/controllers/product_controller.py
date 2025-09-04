@@ -3,32 +3,36 @@ from flask_jwt_extended import jwt_required
 from app.services.product_service import ProductService
 from app.utils.response import success_response, error_response
 
+
 class ProductController:
 
     @staticmethod
     @jwt_required()
     def get_all():
-        page = request.args.get('page', default=1, type=int)
-        per_page = request.args.get('per_page', default=10, type=int)
-        
+        page = request.args.get("page", default=1, type=int)
+        per_page = request.args.get("per_page", default=10, type=int)
+
         filters = {
-            "category_id":request.args.get('category_id'),
-            "discounted":request.args.get('discounted'), 
-            "product": request.args.get('product'), 
-            "in_stock": request.args.get('product'),
-            "exclusive": request.args.get('exclusive')
+            "category_id": request.args.get("category_id"),
+            "discounted": request.args.get("discounted"),
+            "product": request.args.get("product"),
+            "in_stock": request.args.get("product"),
+            "exclusive": request.args.get("exclusive"),
         }
-        
+
         filters = {k: v for k, v in filters.items() if v is not None}
 
-        products, total = ProductService.get_all(page, per_page, filters = filters)
-        return success_response("Products retrieved", {
-            "items": products,
-            "total": total,
-            "page": page,
-            "per_page": per_page,
-        })
-    
+        products, total = ProductService.get_all(page, per_page, filters=filters)
+        return success_response(
+            "Products retrieved",
+            {
+                "items": products,
+                "total": total,
+                "page": page,
+                "per_page": per_page,
+            },
+        )
+
     @staticmethod
     @jwt_required()
     def get_one(product_id):
