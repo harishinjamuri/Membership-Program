@@ -23,9 +23,8 @@ class AddressBookController:
 
     @staticmethod
     @jwt_required()
-    def get_addresses_by_id():
-        user_id = get_jwt_identity()
-        addresses = AddressBookService.get_addresses(user_id)
+    def get_addresses_by_id(address_id):
+        addresses = AddressBookService.get_addresses_by_id(address_id)
         return success_response("User addresses", [a.to_dict() for a in addresses])
 
     @staticmethod

@@ -1,5 +1,4 @@
 from app.services.discount_service import DiscountService
-from app.schemas.discount import AppliesToModel
 from app.constants import DiscountType, DiscountApplicableType
 
 

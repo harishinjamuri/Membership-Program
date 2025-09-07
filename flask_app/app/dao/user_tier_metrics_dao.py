@@ -14,7 +14,8 @@ class UserTierMetricsDAO:
     @staticmethod
     def create_or_update(data):
         user_id = data["user_id"]
-        month_year = datetime.utcnow().strftime("%Y-%m")
+        month_year = data.get('month_year') or datetime.utcnow().strftime("%Y-%m")
+
 
         utm = UserTierMetricsDAO.get_for_user_month(user_id, month_year)
 

@@ -3,7 +3,7 @@ from app.constants import OrderStatus
 
 
 class Order(BaseModel):
-    __tablename__ = "order"
+    __tablename__ = "orders"
 
     user_id = db.Column(db.String(36), nullable=False)
     status = db.Column(
