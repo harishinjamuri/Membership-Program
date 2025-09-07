@@ -96,3 +96,16 @@ Set environment variables if needed:
 #### Table Schema
 `database/Tables_Schema.md`
 
+
+### Configurations
+
+#### Flask ( Python ) 
+File Path: `flask_api/app/config.py`
+Database File Name:  `sqlite_db_name` 
+Port : `port`   
+
+#### SpringBoot ( JAVA ) 
+File Path: `springboot_api/src/main/resources/application.properties`
+Database File Name:  `spring.datasource.url` 
+Port : `server.port`   
+

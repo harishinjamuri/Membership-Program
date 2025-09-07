@@ -265,7 +265,7 @@ CREATE TABLE product (
 
 ---
 
-## 🛒 ORDER
+## 🛒 ORDERS
 
 | Column                 | Data Type | Description                        |
 | ---------------------- | --------- | ---------------------------------- |
@@ -284,7 +284,7 @@ CREATE TABLE product (
 | updated_at            | TIMESTAMP | Record update time                 |
 
 ```
-CREATE TABLE IF NOT EXISTS "order" (
+CREATE TABLE IF NOT EXISTS "orders" (
         user_id VARCHAR(36) NOT NULL, 
         status VARCHAR(10) NOT NULL, 
         total_amount FLOAT, 
