@@ -62,7 +62,7 @@ Included in this repo:
     cd flask-api
     source firstclubenv/bin/activate # to activate the Virtual Environment
     pip install -r requirements.txt
-    python run.py
+    flask run
 
 #### 3. Run Spring Boot API
 
