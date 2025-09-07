@@ -1,0 +1,1568 @@
+{
+	"info": {
+		"_postman_id": "1d1d78d1-fe36-4d1b-83ef-0ca3fa52fd59",
+		"name": "First Club Membership",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48071604",
+		"_collection_link": "https://injamuriharishk-8940625.postman.co/workspace/harishinjamuri's-Workspace~b4b3389a-0973-4117-893e-2a359f108d50/collection/48071604-1d1d78d1-fe36-4d1b-83ef-0ca3fa52fd59?action=share&source=collection_link&creator=48071604"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"phk@gmail.com\",\"password\":\"harishkumar\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Harish Kumar\",\n    \"email\": \"hk@gmail.com\",\n    \"password\": \"harishkumar\",\n    \"phone_number\": \"7893997937\",\n    \"date_of_birth\": \"1998/04/17\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"current_password\":\"harishkumar11\",\"new_password\":\"harishkumar\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/ce7dd568-b444-4101-8713-91bd4ce12548",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"ce7dd568-b444-4101-8713-91bd4ce12548"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/address",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Addresses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Home\",\n  \"pincode\": \"560069\",\n  \"address\": \"BTM\",\n  \"city\": \"Bangalore\",\n  \"state\": \"Karnataka\",\n  \"country\": \"India\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/address",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"ihk@gmail.com\",\"password\":\"harishkumar\"}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans & Tiers",
+			"item": [
+				{
+					"name": "List Plans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/plans",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Tiers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/tiers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plan Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/plans/62fe08eb-fcad-4da7-8aa1-58807e38aae1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plans",
+								"62fe08eb-fcad-4da7-8aa1-58807e38aae1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tier Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/tiers/3b89bc52-def3-4c89-b1df-b1e1cfa4818f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiers",
+								"3b89bc52-def3-4c89-b1df-b1e1cfa4818f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Plan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"duration_days\": 365,\n    \"id\": \"62fe08eb-fcad-4da7-8aa1-58807e38aae1\",\n    \"is_active\": true,\n    \"name\": \"Yearly Plan\",\n    \"plan_type\": \"YEARLY\",\n    \"price\": 850.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/plans/62fe08eb-fcad-4da7-8aa1-58807e38aae1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plans",
+								"62fe08eb-fcad-4da7-8aa1-58807e38aae1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Tier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"min_monthly_orders\": 45,\n    \"min_monthly_spend\": 10000.0,\n    \"min_total_orders\": 100,\n    \"min_total_spend\": 20000.0,\n    \"name\": \"Platinum Tier\",\n    \"tier\": \"PLATINUM\",\n    \"tier_level\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/tiers/3b89bc52-def3-4c89-b1df-b1e1cfa4818f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiers",
+								"3b89bc52-def3-4c89-b1df-b1e1cfa4818f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Yearly Plan\",\n    \"description\": \"This Plan Offers Premium benefits.\",\n    \"price\": 850.0,\n    \"plan_type\": \"YEARLY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/plans",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bronze Tier\",\n    \"description\": \"Bronze Tier with Advanced Benefits\",\n    \"tier\": \"BRONZE\",\n    \"min_monthly_orders\": 0,\n    \"min_monthly_spend\": 0.0,\n    \"min_total_orders\": 0,\n    \"min_total_spend\": 0.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/tiers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tier Benefits",
+			"item": [
+				{
+					"name": "List Benefits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/benefits",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"benefits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Benefit Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/benefits/e661334e-fcee-4d76-b860-877f45266bfa",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"benefits",
+								"e661334e-fcee-4d76-b860-877f45266bfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tier Benefit Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/benefits/tier/3b89bc52-def3-4c89-b1df-b1e1cfa4818f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"benefits",
+								"tier",
+								"3b89bc52-def3-4c89-b1df-b1e1cfa4818f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Benefit Details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"benefit_value\": {\n        \"enabled\": true,\n        \"min_order_value\": 0.0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/benefits/e661334e-fcee-4d76-b860-877f45266bfa",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"benefits",
+								"e661334e-fcee-4d76-b860-877f45266bfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Benefit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Member-only deals\",\n    \"tier_id\": \"3b89bc52-def3-4c89-b1df-b1e1cfa4818f\",\n    \"benefit_type\": \"PRIORITY_SUPPORT\",\n    \"benefit_value\": { \"type\": \"E-Mail\"},\n    \"sort_order\": 1\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/benefits",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"benefits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "List Subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/subscriptions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plan_id\": \"ebd95415-35d3-4001-ae8a-9a9897756aa4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/subscriptions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Subscription",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plan_id\": \"62fe08eb-fcad-4da7-8aa1-58807e38aae1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/subscriptions/444df2d8-0201-4968-a166-b31bfd22d0ee",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"subscriptions",
+								"444df2d8-0201-4968-a166-b31bfd22d0ee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discounts & Usage",
+			"item": [
+				{
+					"name": "List Discounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discounts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount by CODE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discounts/code/BAR50",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discounts",
+								"code",
+								"BAR50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount Validate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"DISCOUNT10\",\n    \"user_tier\":\"GOLD\",\n    \"order_total\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discounts/validate",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discounts",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Discounts Usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discount-usages",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discount-usages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discounts/8799b1ef-13a3-4bfa-97cd-5eb8c5691ae0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discounts",
+								"8799b1ef-13a3-4bfa-97cd-5eb8c5691ae0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount Usage Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discount-usages/22382fca-457b-4627-87aa-9531b3e6b8d2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discount-usages",
+								"22382fca-457b-4627-87aa-9531b3e6b8d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Discounts Usage List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discount-usages/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discount-usages",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Discounts Usage List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discount-usages/user/15924828-9319-4e58-93b2-f33a115da930",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discount-usages",
+								"user",
+								"15924828-9319-4e58-93b2-f33a115da930"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Discount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"min_tier\": \"SILVER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discounts/47bac00a-65dc-4eeb-986b-494a0afaf132",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discounts",
+								"47bac00a-65dc-4eeb-986b-494a0afaf132"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Discount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"BAR51\",\n  \"name\": \"Special Offer on Multigrain Energy Bars\",\n  \"description\": \"Special Offer on Multigrain Energy Bars with Max Discount of ₹50\",\n  \"discount_type\": \"FIXED_AMOUNT\",\n  \"value\": 50.0,\n  \"applies_to\": {\"type\":\"product\",\"ids\":[\"1f2c1da0-cbca-4663-9f25-ed10230c93c8\"]},\n  \"min_order_value\": 0.0,\n  \"max_discount_amount\": 50.0,\n  \"usage_limit_per_user\": 10,\n  \"min_tier\": \"BRONZE\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/discounts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories & Products",
+			"item": [
+				{
+					"name": "List Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/categories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/categories/a6e315c5-3c09-45d3-a4fc-57fd92009503",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"a6e315c5-3c09-45d3-a4fc-57fd92009503"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/products/1f2c1da0-cbca-4663-9f25-ed10230c93c8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"1f2c1da0-cbca-4663-9f25-ed10230c93c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"description\": \"Fresh Fruits\",\n        \"name\": \"Fruits\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/categories/a6e315c5-3c09-45d3-a4fc-57fd92009503",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"a6e315c5-3c09-45d3-a4fc-57fd92009503"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"discount_id\": \"8799b1ef-13a3-4bfa-97cd-5eb8c5691ae0\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/products/1f2c1da0-cbca-4663-9f25-ed10230c93c8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"1f2c1da0-cbca-4663-9f25-ed10230c93c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Fruits\",\n  \"description\": \"Fresh Fruits\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/categories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Organic Red Apples (500g)\",\n  \"description\": \"Fresh Organic Red Apples (500g) 3-4 pieces\",\n  \"category_id\": \"a6e315c5-3c09-45d3-a4fc-57fd92009503\",\n  \"stock_quantity\":100,\n  \"price\": 200,\n  \"min_tier_required\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "List Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List My Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders/a27d1856-fa66-46db-9459-f218b1200cea",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"a27d1856-fa66-46db-9459-f218b1200cea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delivery_address\": \"47b3b148-a52b-4965-bc63-bec71bc44f90\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders/a27d1856-fa66-46db-9459-f218b1200cea",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"a27d1856-fa66-46db-9459-f218b1200cea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders/confirm/8264b303-0100-4d73-b996-ad19a766d97d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"confirm",
+								"8264b303-0100-4d73-b996-ad19a766d97d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Item",
+			"item": [
+				{
+					"name": "Create Order Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"1f2c1da0-cbca-4663-9f25-ed10230c93c8\",\n    \"product_name\": \"Multigrain Energy Bars (Pack of 6)\",\n    \"quantity\": 1,\n    \"unit_price\": 800.0,\n    \"total_price\": 800.0,\n    \"discount_applied\": true,\n    \"discount_value\": 50.0,\n    \"discount_id\": \"8799b1ef-13a3-4bfa-97cd-5eb8c5691ae0\",\n    \"total_discount_value\": 50.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/order-items/8264b303-0100-4d73-b996-ad19a766d97d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order-items",
+								"8264b303-0100-4d73-b996-ad19a766d97d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"1f2c1da0-cbca-4663-9f25-ed10230c93c8\",\n    \"product_name\": \"Multigrain Energy Bars (Pack of 6)\",\n    \"quantity\": 4,\n    \"unit_price\": 800.0,\n    \"total_price\": 3200.0,\n    \"discount_applied\": true,\n    \"discount_value\": 50.0,\n    \"discount_id\": \"8799b1ef-13a3-4bfa-97cd-5eb8c5691ae0\",\n    \"total_discount_value\": 200.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/order-items/0fa81f1b-03fd-4ef2-9054-9133a12153eb",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order-items",
+								"0fa81f1b-03fd-4ef2-9054-9133a12153eb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Item Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/order-items/0fa81f1b-03fd-4ef2-9054-9133a12153eb",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order-items",
+								"0fa81f1b-03fd-4ef2-9054-9133a12153eb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "Notifications List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/notifications/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"notifications",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user-metrics/2025-09",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user-metrics",
+								"2025-09"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
