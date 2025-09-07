@@ -1,15 +1,23 @@
 package com.example.membership_api.controller;
 
-import com.example.membership_api.model.Notifications;
-import com.example.membership_api.service.NotificationService;
-import com.example.membership_api.utils.ResponseUtil;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.membership_api.model.Notifications;
+import com.example.membership_api.service.NotificationService;
+import com.example.membership_api.utils.JwtUtil;
+import com.example.membership_api.utils.ResponseUtil;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/notifications")
@@ -32,7 +40,7 @@ public class NotificationController {
             HttpServletRequest request
     ) {
         // In real app, get userId from auth token or context
-        String userId = (String) request.getAttribute("userId");
+        String userId = JwtUtil.extractUserIdFromRequest(request);
 
         Map<String, Object> filters = new HashMap<>();
         if (is_read != null) filters.put("is_read", is_read);
@@ -63,7 +71,7 @@ public class NotificationController {
 
     @PutMapping("/{notificationId}/readall")
     public ResponseEntity<?> markAllAsRead(HttpServletRequest request) {
-        String userId = (String) request.getAttribute("userId");
+        String userId = JwtUtil.extractUserIdFromRequest(request);
         notificationService.markAllAsRead(userId);
         return ResponseEntity.ok(ResponseUtil.success("All notifications marked as read"));
     }

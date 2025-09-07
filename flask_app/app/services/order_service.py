@@ -66,6 +66,10 @@ class OrderService:
 
         # Validate order
         order = OrderDAO.get_by_id(order_id)
+
+        if order.status != OrderStatus.PENDING:
+            raise ValueError(f"Cannot confirm order with status: {order.status}")
+
         order.status = OrderStatus.CONFIRMED
         current_app.logger.info(f"order: {order.to_dict()}")
 
@@ -75,6 +79,9 @@ class OrderService:
         # Fetch items
         order_items = OrderItemService.get_all_for_order(order_id)
         current_app.logger.info(f"order_items: {[order_items]}")
+
+        if len(order_items):
+            raise ValueError(f"Cannot Confirm Order with out Any items")
         # Optional: Calculate delivery charges
         total_amount = sum(
             [item.total_price - item.total_discount_value for item in order_items]
