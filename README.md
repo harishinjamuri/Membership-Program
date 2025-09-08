@@ -109,3 +109,13 @@ File Path: `springboot_api/src/main/resources/application.properties`
 Database File Name:  `spring.datasource.url` 
 Port : `server.port`   
 
+
+### Credentials:
+
+**Admin:**
+Email: admin@gmail.com
+Password: harishkumar
+
+**User**
+Email: hk@gmail.com
+Password: harishkumar
